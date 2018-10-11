@@ -1,9 +1,14 @@
-class V3 {
+import { Vector3 } from "../../js/libs/three.module";
+console.log(Vector3);
+class V3 extends Vector3 {
   constructor(x = 0, y = 0, z = 0) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
+    super(x,y,z);
+    //this.x = x;
+    //this.y = y;
+    //this.z = z;
+    
   }
+  /*
   get isVector3() {
     return true;
   }
@@ -14,11 +19,13 @@ class V3 {
     this.z = z || 0;
     return this;
   }
-
+*/
+/*
   distanceTo(v) {
     return Math.sqrt(this.distanceToSquared(v));
   }
-
+*/
+/*
   distanceToSquared(v) {
     var dx = this.x - v.x,
       dy = this.y - v.y,
@@ -26,7 +33,7 @@ class V3 {
 
     return dx * dx + dy * dy + dz * dz;
   }
-
+*/
   abs() {
     return new V3(
       this.x < 0 ? -this.x : this.x,
@@ -34,19 +41,21 @@ class V3 {
       this.z < 0 ? -this.z : this.z
     );
   }
-
+/*
   dot(v) {
     return this.x * v.x + this.y * v.y + this.z * v.z;
   }
-
+*/
+/*
   length() {
     return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
   }
-
+*/
+/*
   lengthSq() {
     return this.x * this.x + this.y * this.y + this.z * this.z;
   }
-
+*/
   normalize() {
     return this.divideScalar(this.length() || 1);
   }
@@ -54,14 +63,14 @@ class V3 {
   normalised() {
     return new V3(this.x, this.y, this.z).normalize();
   }
-
+/*
   add(v) {
     this.x += v.x;
     this.y += v.y;
     this.z += v.z;
     return this;
   }
-
+*/
   min(v) {
     this.x -= v.x;
     this.y -= v.y;
@@ -84,18 +93,19 @@ class V3 {
   multiply(s) {
     return new V3(this.x * s, this.y * s, this.z * s);
   }
-
+/*
   multiplyScalar(scalar) {
     this.x *= scalar;
     this.y *= scalar;
     this.z *= scalar;
     return this;
   }
-
+*/
+/*
   divideScalar(scalar) {
     return this.multiplyScalar(1 / scalar);
   }
-
+*/
   cross(v) {
     return new V3(
       this.y * v.z - this.z * v.y,
@@ -103,7 +113,7 @@ class V3 {
       this.x * v.y - this.y * v.x
     );
   }
-
+/*
   crossVectors(a, b) {
     var ax = a.x,
       ay = a.y,
@@ -118,14 +128,15 @@ class V3 {
 
     return this;
   }
-
+  */
+/*
   negate() {
     this.x = -this.x;
     this.y = -this.y;
     this.z = -this.z;
     return this;
   }
-
+*/
   negated() {
     return new V3(-this.x, -this.y, -this.z);
   }
@@ -133,14 +144,14 @@ class V3 {
   clone() {
     return new V3(this.x, this.y, this.z);
   }
-
+/*
   copy(v) {
     this.x = v.x;
     this.y = v.y;
     this.z = v.z;
     return this;
   }
-
+*/
   approximatelyEquals(v, t) {
     if (t < 0) return false;
     var xDiff = Math.abs(this.x - v.x);
@@ -199,12 +210,12 @@ class V3 {
   }
 
   // added
-
+/*
   projectOnVector(vector) {
     var scalar = vector.dot(this) / vector.lengthSq();
     return this.copy(vector).multiplyScalar(scalar);
   }
-
+*/
   projectOnPlane() {
     var v1 = new V3();
 
@@ -227,7 +238,7 @@ class V3 {
 
     return this.normalize();
   }
-
+/*
   applyMatrix3(m) {
     var x = this.x,
       y = this.y,
@@ -240,7 +251,8 @@ class V3 {
 
     return this;
   }
-
+*/
+/*
   applyQuaternion(q) {
     var x = this.x,
       y = this.y,
@@ -265,7 +277,7 @@ class V3 {
 
     return this;
   }
-
+*/
   /////
 
   sign(v, normal) {
@@ -307,5 +319,5 @@ class V3 {
     return this;
   }
 }
-
+console.log(V3);
 export { V3 };

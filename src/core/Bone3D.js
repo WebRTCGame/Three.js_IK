@@ -1,8 +1,9 @@
 import { END, START } from "../constants.js";
 import { Joint3D } from "./Joint3D.js";
 import { V3 } from "../math/V3.js";
+import { Bone } from "../../js/libs/three.module";
 
-class Bone3D {
+class Bone3D extends Bone{
   constructor(startLocation, endLocation, directionUV, length, color) {
     this.joint = new Joint3D();
     this.start = new V3();

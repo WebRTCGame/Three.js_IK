@@ -18,6 +18,7 @@ import { V3 } from "../math/V3.js";
 import { M3 } from "../math/M3.js";
 import { Bone3D } from "./Bone3D.js";
 import { Tools } from "./Tools.js";
+
 class Chain3D {
   constructor(color = 0xffffff) {
     this.tmpTarget = new V3();
