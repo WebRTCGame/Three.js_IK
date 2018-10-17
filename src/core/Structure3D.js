@@ -122,7 +122,7 @@ class Structure3D {
   clear() {
     this.clearAllBoneMesh();
 
-    var i, j;
+    var i;
 
     i = this.numChains;
     while (i--) {

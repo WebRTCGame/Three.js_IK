@@ -1,12 +1,11 @@
 import { Vector3 } from "../../js/libs/three.module";
-console.log(Vector3);
+
 class V3 extends Vector3 {
   constructor(x = 0, y = 0, z = 0) {
-    super(x,y,z);
+    super(x, y, z);
     //this.x = x;
     //this.y = y;
     //this.z = z;
-    
   }
   /*
   get isVector3() {
@@ -20,12 +19,12 @@ class V3 extends Vector3 {
     return this;
   }
 */
-/*
+  /*
   distanceTo(v) {
     return Math.sqrt(this.distanceToSquared(v));
   }
 */
-/*
+  /*
   distanceToSquared(v) {
     var dx = this.x - v.x,
       dy = this.y - v.y,
@@ -41,17 +40,17 @@ class V3 extends Vector3 {
       this.z < 0 ? -this.z : this.z
     );
   }
-/*
+  /*
   dot(v) {
     return this.x * v.x + this.y * v.y + this.z * v.z;
   }
 */
-/*
+  /*
   length() {
     return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
   }
 */
-/*
+  /*
   lengthSq() {
     return this.x * this.x + this.y * this.y + this.z * this.z;
   }
@@ -63,7 +62,7 @@ class V3 extends Vector3 {
   normalised() {
     return new V3(this.x, this.y, this.z).normalize();
   }
-/*
+  /*
   add(v) {
     this.x += v.x;
     this.y += v.y;
@@ -93,7 +92,7 @@ class V3 extends Vector3 {
   multiply(s) {
     return new V3(this.x * s, this.y * s, this.z * s);
   }
-/*
+  /*
   multiplyScalar(scalar) {
     this.x *= scalar;
     this.y *= scalar;
@@ -101,7 +100,7 @@ class V3 extends Vector3 {
     return this;
   }
 */
-/*
+  /*
   divideScalar(scalar) {
     return this.multiplyScalar(1 / scalar);
   }
@@ -113,7 +112,7 @@ class V3 extends Vector3 {
       this.x * v.y - this.y * v.x
     );
   }
-/*
+  /*
   crossVectors(a, b) {
     var ax = a.x,
       ay = a.y,
@@ -129,7 +128,7 @@ class V3 extends Vector3 {
     return this;
   }
   */
-/*
+  /*
   negate() {
     this.x = -this.x;
     this.y = -this.y;
@@ -144,7 +143,7 @@ class V3 extends Vector3 {
   clone() {
     return new V3(this.x, this.y, this.z);
   }
-/*
+  /*
   copy(v) {
     this.x = v.x;
     this.y = v.y;
@@ -210,7 +209,7 @@ class V3 extends Vector3 {
   }
 
   // added
-/*
+  /*
   projectOnVector(vector) {
     var scalar = vector.dot(this) / vector.lengthSq();
     return this.copy(vector).multiplyScalar(scalar);
@@ -238,7 +237,7 @@ class V3 extends Vector3 {
 
     return this.normalize();
   }
-/*
+  /*
   applyMatrix3(m) {
     var x = this.x,
       y = this.y,
@@ -252,7 +251,7 @@ class V3 extends Vector3 {
     return this;
   }
 */
-/*
+  /*
   applyQuaternion(q) {
     var x = this.x,
       y = this.y,

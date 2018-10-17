@@ -493,9 +493,9 @@ class Chain3D {
     if (
       this.lastTargetLocation.approximatelyEquals(this.tmpTarget, p) &&
       isSameBaseLocation
-    )
+    ) {
       return this.currentSolveDistance;
-
+    }
     // Keep starting solutions and distance
     var startingDistance;
     var startingSolution = null;

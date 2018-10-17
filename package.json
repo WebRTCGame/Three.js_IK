@@ -44,10 +44,14 @@
   },
   "homepage": "http://lo-th.github.io/Fullik/",
   "devDependencies": {
-    "eslint": "latest",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "eslint": "^5.7.0",
     "eslint-config-mdcs": "latest",
-    "google-closure-compiler": "latest",
-    "rollup": "latest",
+    "google-closure-compiler": "^20181008.0.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-watch": "latest",
     "uglify-js": "latest"
   }

@@ -48635,6 +48635,8 @@
 	    } */
 	}
 
+	//import { Bone } from "../../js/libs/three.module";
+
 	class Bone3D {
 	  constructor(startLocation, endLocation, directionUV, length, color) {
 	    this.joint = new Joint3D();

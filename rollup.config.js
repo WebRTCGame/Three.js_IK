@@ -1,3 +1,4 @@
+import babel from 'rollup-plugin-babel';
 export default {
 	input: 'src/Fullik.js',
 	
@@ -7,12 +8,22 @@ export default {
 			format: 'umd',
 			name: 'FIK',
 			file: 'build/fik.js',
-			indent: '\t'
+			indent: '\t',
+			plugins: [
+			  babel({
+				exclude: 'node_modules/**'
+			  })
+			]
 		},
 		{
 			format: 'es',
 			file: 'build/fik.module.js',
-			indent: '\t'
+			indent: '\t',
+			plugins: [
+			  babel({
+				exclude: 'node_modules/**'
+			  })
+			]
 		}
 	]
 };
