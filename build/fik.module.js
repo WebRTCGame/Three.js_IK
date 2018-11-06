@@ -1,4 +1,4 @@
-import 'memoizee';
+import { memoize } from 'memoizee';
 
 // Polyfills
 
@@ -95,6 +95,7 @@ let Tools = {
 
 };
 
+console.log(memoize);
 var _Math = {
   toRad: Math.PI / 180,
   toDeg: 180 / Math.PI,
