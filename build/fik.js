@@ -47664,14 +47664,12 @@
 
 	};
 
-	console.log(Vector3);
 	class V3 extends Vector3 {
 	  constructor(x = 0, y = 0, z = 0) {
-	    super(x,y,z);
+	    super(x, y, z);
 	    //this.x = x;
 	    //this.y = y;
 	    //this.z = z;
-	    
 	  }
 	  /*
 	  get isVector3() {
@@ -47685,12 +47683,12 @@
 	    return this;
 	  }
 	*/
-	/*
+	  /*
 	  distanceTo(v) {
 	    return Math.sqrt(this.distanceToSquared(v));
 	  }
 	*/
-	/*
+	  /*
 	  distanceToSquared(v) {
 	    var dx = this.x - v.x,
 	      dy = this.y - v.y,
@@ -47706,17 +47704,17 @@
 	      this.z < 0 ? -this.z : this.z
 	    );
 	  }
-	/*
+	  /*
 	  dot(v) {
 	    return this.x * v.x + this.y * v.y + this.z * v.z;
 	  }
 	*/
-	/*
+	  /*
 	  length() {
 	    return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
 	  }
 	*/
-	/*
+	  /*
 	  lengthSq() {
 	    return this.x * this.x + this.y * this.y + this.z * this.z;
 	  }
@@ -47728,7 +47726,7 @@
 	  normalised() {
 	    return new V3(this.x, this.y, this.z).normalize();
 	  }
-	/*
+	  /*
 	  add(v) {
 	    this.x += v.x;
 	    this.y += v.y;
@@ -47758,7 +47756,7 @@
 	  multiply(s) {
 	    return new V3(this.x * s, this.y * s, this.z * s);
 	  }
-	/*
+	  /*
 	  multiplyScalar(scalar) {
 	    this.x *= scalar;
 	    this.y *= scalar;
@@ -47766,7 +47764,7 @@
 	    return this;
 	  }
 	*/
-	/*
+	  /*
 	  divideScalar(scalar) {
 	    return this.multiplyScalar(1 / scalar);
 	  }
@@ -47778,7 +47776,7 @@
 	      this.x * v.y - this.y * v.x
 	    );
 	  }
-	/*
+	  /*
 	  crossVectors(a, b) {
 	    var ax = a.x,
 	      ay = a.y,
@@ -47794,7 +47792,7 @@
 	    return this;
 	  }
 	  */
-	/*
+	  /*
 	  negate() {
 	    this.x = -this.x;
 	    this.y = -this.y;
@@ -47809,7 +47807,7 @@
 	  clone() {
 	    return new V3(this.x, this.y, this.z);
 	  }
-	/*
+	  /*
 	  copy(v) {
 	    this.x = v.x;
 	    this.y = v.y;
@@ -47875,7 +47873,7 @@
 	  }
 
 	  // added
-	/*
+	  /*
 	  projectOnVector(vector) {
 	    var scalar = vector.dot(this) / vector.lengthSq();
 	    return this.copy(vector).multiplyScalar(scalar);
@@ -47903,7 +47901,7 @@
 
 	    return this.normalize();
 	  }
-	/*
+	  /*
 	  applyMatrix3(m) {
 	    var x = this.x,
 	      y = this.y,
@@ -47917,7 +47915,7 @@
 	    return this;
 	  }
 	*/
-	/*
+	  /*
 	  applyQuaternion(q) {
 	    var x = this.x,
 	      y = this.y,
@@ -48638,7 +48636,13 @@
 	//import { Bone } from "../../js/libs/three.module";
 
 	class Bone3D {
-	  constructor(startLocation, endLocation, directionUV, length, color) {
+	  constructor(
+	    startLocation,
+	    endLocation,
+	    directionUV,
+	    length,
+	    color = 0xffffff
+	  ) {
 	    this.joint = new Joint3D();
 	    this.start = new V3();
 	    this.end = new V3();
@@ -48680,7 +48684,9 @@
 	  setColor(c) {
 	    this.color = c;
 	  }
-
+	  //set color(c) {
+	  //  this.color = c;
+	  //}
 	  setBoneConnectionPoint(bcp) {
 	    this.boneConnectionPoint = bcp;
 	  }
@@ -48819,8 +48825,8 @@
 	  }
 
 	  addBone(bone) {
-	    bone.setColor(this.color);
-
+	    //bone.setColor(this.color);
+	bone.setColor(this.color);
 	    // Add the new bone to the end of the ArrayList of bones
 	    this.bones.push(bone);
 	    // Increment the number of bones in the chain and update the chain length
@@ -49008,7 +49014,7 @@
 	  setColor(c) {
 	    this.color = c;
 	    var i = this.numBones;
-	    while (i--) this.bones[i].setColor(this.color);
+	    while (i--) this.bones[i].color(this.color);
 	  }
 
 	  setBaseboneRelativeConstraintUV(uv) {
@@ -49202,9 +49208,9 @@
 	    if (
 	      this.lastTargetLocation.approximatelyEquals(this.tmpTarget, p) &&
 	      isSameBaseLocation
-	    )
+	    ) {
 	      return this.currentSolveDistance;
-
+	    }
 	    // Keep starting solutions and distance
 	    var startingDistance;
 	    var startingSolution = null;
@@ -51245,7 +51251,7 @@
 
 	} );
 
-	class IKSolver {
+	class Solver {
 	  constructor() {
 	    this.startBones = null;
 	    this.endBones = null;
@@ -51260,6 +51266,30 @@
 
 	    this.solver = null;
 	    this.chain = null;
+	  }
+	  get isSolver() {
+	    return true;
+	  }
+	}
+
+	class IKSolver extends Solver{
+	  constructor() {
+	    super();
+	    /*
+	    this.startBones = null;
+	    this.endBones = null;
+
+	    this.target = null;
+	    this.goal = null;
+	    this.swivelAngle = 0;
+
+	    this.iteration = 40;
+
+	    this.thresholds = { position: 0.1, rotation: 0.1 };
+
+	    this.solver = null;
+	    this.chain = null;
+	    */
 	  }
 	  get isIKSolver() {
 	    return true;
@@ -51302,6 +51332,7 @@
 	exports.Bone2D = Bone2D;
 	exports.Chain2D = Chain2D;
 	exports.Structure2D = Structure2D;
+	exports.Solver = Solver;
 	exports.IKSolver = IKSolver;
 	exports.HISolver = HISolver;
 	exports.REVISION = REVISION$1;

@@ -110,8 +110,8 @@ class Chain3D {
   }
 
   addBone(bone) {
+    //bone.setColor(this.color);
     bone.setColor(this.color);
-
     // Add the new bone to the end of the ArrayList of bones
     this.bones.push(bone);
     // Increment the number of bones in the chain and update the chain length
@@ -299,7 +299,7 @@ class Chain3D {
   setColor(c) {
     this.color = c;
     var i = this.numBones;
-    while (i--) this.bones[i].setColor(this.color);
+    while (i--) this.bones[i].color(this.color);
   }
 
   setBaseboneRelativeConstraintUV(uv) {

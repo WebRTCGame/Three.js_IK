@@ -1,10 +1,7 @@
 import { _Math } from "../math/Math.js";
-import { Solver } from "./Solver.js";
 
-class HISolver {
+class Solver {
   constructor() {
-    super();
-    /*
     this.startBones = null;
     this.endBones = null;
 
@@ -18,11 +15,10 @@ class HISolver {
 
     this.solver = null;
     this.chain = null;
-    */
   }
-  get isIKSolver() {
+  get isSolver() {
     return true;
   }
 }
 
-export { HISolver };
+export { Solver };

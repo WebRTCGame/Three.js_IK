@@ -4,7 +4,13 @@ import { V3 } from "../math/V3.js";
 //import { Bone } from "../../js/libs/three.module";
 
 class Bone3D {
-  constructor(startLocation, endLocation, directionUV, length, color) {
+  constructor(
+    startLocation,
+    endLocation,
+    directionUV,
+    length,
+    color = 0xffffff
+  ) {
     this.joint = new Joint3D();
     this.start = new V3();
     this.end = new V3();
@@ -46,7 +52,9 @@ class Bone3D {
   setColor(c) {
     this.color = c;
   }
-
+  //set color(c) {
+  //  this.color = c;
+  //}
   setBoneConnectionPoint(bcp) {
     this.boneConnectionPoint = bcp;
   }
