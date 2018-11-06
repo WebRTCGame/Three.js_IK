@@ -1,5 +1,5 @@
 import { END, START } from '../constants.js';
-import { Joint3D } from './Joint3D.js';
+import { Joint3D } from '../core/Joint3D.js';
 import { V3 } from '../math/V3.js';
 
 function Bone3D ( startLocation, endLocation, directionUV, length, color ){

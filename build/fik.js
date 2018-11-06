@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global.FIK = {})));
-}(this, (function (exports) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('memoizee')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'memoizee'], factory) :
+	(factory((global.FIK = {}),global.memoizee));
+}(this, (function (exports,memoizee) { 'use strict';
 
 	// Polyfills
 
@@ -47982,7 +47982,6 @@
 	    return this;
 	  }
 	}
-	console.log(V3);
 
 	function M3 () {
 
@@ -48826,7 +48825,7 @@
 
 	  addBone(bone) {
 	    //bone.setColor(this.color);
-	bone.setColor(this.color);
+	    bone.setColor(this.color);
 	    // Add the new bone to the end of the ArrayList of bones
 	    this.bones.push(bone);
 	    // Increment the number of bones in the chain and update the chain length
@@ -51272,45 +51271,18 @@
 	  }
 	}
 
-	class IKSolver extends Solver{
+	class IKSolver extends Solver {
 	  constructor() {
 	    super();
-	    /*
-	    this.startBones = null;
-	    this.endBones = null;
-
-	    this.target = null;
-	    this.goal = null;
-	    this.swivelAngle = 0;
-
-	    this.iteration = 40;
-
-	    this.thresholds = { position: 0.1, rotation: 0.1 };
-
-	    this.solver = null;
-	    this.chain = null;
-	    */
 	  }
 	  get isIKSolver() {
 	    return true;
 	  }
 	}
 
-	class HISolver {
+	class HISolver extends Solver {
 	  constructor() {
-	    this.startBones = null;
-	    this.endBones = null;
-
-	    this.target = null;
-	    this.goal = null;
-	    this.swivelAngle = 0;
-
-	    this.iteration = 40;
-
-	    this.thresholds = { position: 0.1, rotation: 0.1 };
-
-	    this.solver = null;
-	    this.chain = null;
+	    super();
 	  }
 	  get isIKSolver() {
 	    return true;

@@ -54,5 +54,8 @@
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-watch": "latest",
     "uglify-js": "latest"
+  },
+  "dependencies": {
+    "memoizee": "^0.4.14"
   }
 }

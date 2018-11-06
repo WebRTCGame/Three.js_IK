@@ -3,12 +3,12 @@
 import { _Math } from '../math/Math.js';
 import { V3 } from '../math/V3.js';
 import { V2 } from '../math/V2.js';
-import { Structure3D } from './Structure3D.js';
-import { Structure2D } from './Structure2D.js';
-import { Chain3D } from './Chain3D.js';
-import { Chain2D } from './Chain2D.js';
-import { Bone3D } from './Bone3D.js';
-import { Bone2D } from './Bone2D.js';
+import { Structure3D } from '../core/Structure3D.js';
+import { Structure2D } from '../core/Structure2D.js';
+import { Chain3D } from '../core/Chain3D.js';
+import { Chain2D } from '../core/Chain2D.js';
+import { Bone3D } from '../core/Bone3D.js';
+import { Bone2D } from '../core/Bone2D.js';
 
 
 function IKSolver(){

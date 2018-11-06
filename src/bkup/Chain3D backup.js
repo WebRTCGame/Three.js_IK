@@ -2,8 +2,8 @@ import { NONE, GLOBAL_ROTOR, GLOBAL_HINGE, LOCAL_ROTOR, LOCAL_HINGE, J_BALL, J_G
 import { _Math } from '../math/Math.js';
 import { V3 } from '../math/V3.js';
 import { M3 } from '../math/M3.js';
-import { Bone3D } from './Bone3D.js';
-import { Tools } from './Tools.js';
+import { Bone3D } from '../core/Bone3D.js';
+import { Tools } from '../core/Tools.js';
 
  function Chain3D ( color ){
 

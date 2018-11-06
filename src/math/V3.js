@@ -318,5 +318,5 @@ class V3 extends Vector3 {
     return this;
   }
 }
-console.log(V3);
+
 export { V3 };

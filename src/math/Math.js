@@ -1,4 +1,5 @@
 import { Tools } from "../core/Tools.js";
+import {memoize} from "memoizee";
 
 var _Math = {
   toRad: Math.PI / 180,
