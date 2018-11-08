@@ -1,5 +1,6 @@
 import { Tools } from "../core/Tools.js";
-import {memoize} from "memoizee";
+import { memoize } from "../../js/libs/lodash-es/lodash"
+
 console.log(memoize);
 var _Math = {
   toRad: Math.PI / 180,

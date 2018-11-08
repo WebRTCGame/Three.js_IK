@@ -57,6 +57,7 @@
     "uglify-js": "latest"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
     "memoizee": "^0.4.14"
   }
 }
