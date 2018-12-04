@@ -1,5 +1,5 @@
 import { Tools } from "../core/Tools.js";
-import { memoize } from "../../js/libs/lodash-es/lodash"
+import { Memoize } from "./Memoize";
 
 console.log(memoize);
 var _Math = {

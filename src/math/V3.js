@@ -1,4 +1,5 @@
 import { Vector3 } from "../../js/libs/three.module";
+import { Memoize } from "./Memoize";
 
 class V3 extends Vector3 {
   constructor(x = 0, y = 0, z = 0) {
@@ -12,7 +13,7 @@ class V3 extends Vector3 {
     return true;
   }
 
-  set(x, y, z) {
+  set(x, y, z) {npm update
     this.x = x || 0;
     this.y = y || 0;
     this.z = z || 0;
@@ -100,6 +101,9 @@ class V3 extends Vector3 {
     return this;
   }
 */
+  //multiplyScalar(scalar){
+  //return Memoize()(super.multiplyScalar(scalar));
+  //};
   /*
   divideScalar(scalar) {
     return this.multiplyScalar(1 / scalar);

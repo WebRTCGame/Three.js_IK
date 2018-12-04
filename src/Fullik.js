@@ -2,6 +2,7 @@ console.log("loaded fullik.js");
 
 import './polyfills.js';
 
+export { Memoize } from './math/Memoize.js';
 export { _Math } from './math/Math.js';
 export { V2 } from './math/V2.js';
 export { V3 } from './math/V3.js';
