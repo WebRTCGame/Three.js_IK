@@ -128,7 +128,7 @@ function Memoize(options = {}) {
         return (
           record.result ||
           (
-            console.log(" next is new "), /*delete this line only for checking memoize functionality*/
+           // console.log(" next is new "), /*delete this line only for checking memoize functionality*/
             (record.result = ((fn, args) => {
               let called = false;
               let value;
@@ -47738,7 +47738,7 @@ class V3 extends Vector3 {
     return true;
   }
 
-  set(x, y, z) {
+  set(x, y, z) {npm update
     this.x = x || 0;
     this.y = y || 0;
     this.z = z || 0;

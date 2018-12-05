@@ -1,7 +1,7 @@
 import { Tools } from "../core/Tools.js";
 import { Memoize } from "./Memoize";
 
-console.log(memoize);
+//console.log(memoize);
 var _Math = {
   toRad: Math.PI / 180,
   toDeg: 180 / Math.PI,

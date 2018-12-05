@@ -44,6 +44,7 @@
   },
   "homepage": "http://lo-th.github.io/Fullik/",
   "devDependencies": {
+    "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-decorators": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
@@ -57,5 +58,8 @@
     "rollup-watch": "latest",
     "uglify-js": "latest"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "babel-plugin-macros": "^2.4.2"
+  }
 }

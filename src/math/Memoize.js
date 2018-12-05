@@ -45,7 +45,7 @@ function Memoize(options = {}) {
         return (
           record.result ||
           (
-            console.log(" next is new "), /*delete this line only for checking memoize functionality*/
+           // console.log(" next is new "), /*delete this line only for checking memoize functionality*/
             (record.result = ((fn, args) => {
               let called = false;
               let value;
