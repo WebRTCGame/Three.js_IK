@@ -14,8 +14,19 @@ export default {
       indent: "\t",
       plugins: [
         babel({
-          exclude: "node_modules/**"
-        })
+          babelrc: false,
+          presets: [["env", { modules: false, debug: true }]],
+          exclude: "node_modules/**",
+          plugins: ["external-helpers"],
+          externalHelpers: true,
+          runtimeHelpers: true
+        }),
+        resolve({
+          jsnext: true,
+          main: true,
+          browser: true
+        }),
+        commonjs()
       ]
     },
     {
@@ -24,8 +35,19 @@ export default {
       indent: "\t",
       plugins: [
         babel({
-          exclude: "node_modules/**"
-        })
+          babelrc: false,
+          presets: [["env", { modules: false, debug: true }]],
+          exclude: "node_modules/**",
+          plugins: ["external-helpers"],
+          externalHelpers: true,
+          runtimeHelpers: true
+        }),
+        resolve({
+          jsnext: true,
+          main: true,
+          browser: true
+        }),
+        commonjs()
       ]
     }
   ]

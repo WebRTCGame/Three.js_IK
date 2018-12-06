@@ -8,6 +8,7 @@ class V3 extends Vector3 {
     //this.y = y;
     //this.z = z;
   }
+  //#test = "test";
   /*
   get isVector3() {
     return true;

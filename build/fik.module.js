@@ -160,7 +160,7 @@ let Tools = {
 
 };
 
-console.log(memoize);
+//console.log(memoize);
 var _Math = {
   toRad: Math.PI / 180,
   toDeg: 180 / Math.PI,
@@ -47733,6 +47733,7 @@ class V3 extends Vector3 {
     //this.y = y;
     //this.z = z;
   }
+  //#test = "test";
   /*
   get isVector3() {
     return true;

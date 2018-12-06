@@ -52,6 +52,9 @@ class Bone3D {
   setColor(c) {
     this.color = c;
   }
+  set Color(value) {
+    this.color = value;
+  }
   //set color(c) {
   //  this.color = c;
   //}
@@ -74,19 +77,31 @@ class Bone3D {
   setStartLocation(location) {
     this.start.copy(location);
   }
-
+  set Start(value) {
+    this.start.copy(value);
+  }
   setEndLocation(location) {
     this.end.copy(location);
+  }
+
+  set End(value) {
+    this.end.copy(value);
   }
 
   setLength(lng) {
     if (lng > 0) this.length = lng;
   }
+  
+  set Length(value) {
+    if (value > 0) this.length = value;
+  }
 
   setJoint(joint) {
     this.joint = joint;
   }
-
+  set Joint(value) {
+    this.joint = value;
+  }
   // GET
 
   getBoneConnectionPoint() {

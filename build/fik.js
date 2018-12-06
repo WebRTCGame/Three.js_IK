@@ -166,7 +166,7 @@
 
 	};
 
-	console.log(memoize);
+	//console.log(memoize);
 	var _Math = {
 	  toRad: Math.PI / 180,
 	  toDeg: 180 / Math.PI,
@@ -47739,6 +47739,7 @@
 	    //this.y = y;
 	    //this.z = z;
 	  }
+	  //#test = "test";
 	  /*
 	  get isVector3() {
 	    return true;
